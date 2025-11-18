@@ -1,6 +1,6 @@
-import logo from "../assets/logo-blog.svg"
-import effectRowsOne from "../assets/effectrows-header1.svg"
-import effectRowsTwe from "../assets/effectrows-header2.svg"
+import logo from "..//../assets/logo-blog.svg"
+import effectRowsOne from "../../assets/effectrows-header1.svg"
+import effectRowsTwe from "../../assets/effectrows-header2.svg"
 import { HeaderContainer, RowsOne, RowsTwe } from "./styles"
 
 export function Header () {

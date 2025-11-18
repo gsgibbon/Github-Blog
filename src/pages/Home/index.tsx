@@ -8,7 +8,6 @@ import {
   SearchContainer 
 } from "./styles";
 
-// format date
 import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
@@ -37,8 +36,6 @@ interface SeachPostData {
 export function Home() {
   const [profile, setProfile] = useState<TypesProfile>()
   const [posts, setPosts] = useState<TypesPosts[]>([]);
-
-  // const [searchPost, setSearchPost] = useState<string>("");
 
   const navigate = useNavigate();
 
@@ -74,7 +71,6 @@ export function Home() {
     getIssues()
   }, [])
 
-// format Date
   function formatDate(date: string) {
     return formatDistanceToNow(date, {
       addSuffix: true,
@@ -86,9 +82,9 @@ export function Home() {
     navigate(`/post/${postNumber}`)
   }
 
-  async function handleSeachPost(data: SeachPostData) {
+  async function handleSearchPost(data: SeachPostData) {
     const response = await apiURL.get(
-      `/search/issues?q=${data.searchPost} repo:gsgibbon/Github-blog`
+      `/search/issues?q=${data.searchPost} repo:gsgibbon/Github-Blog`
     )
     const dataPost = response.data
     
@@ -106,9 +102,9 @@ export function Home() {
             <LinkGithub href="https://github.com/gsgibbon">GITHUB</LinkGithub>
             
             <p>
-              Tristique volutpat pulvinar vel massa, 
-              pellentesque egestas. Eu viverra massa quam dignissim
-              aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus quidem eligendi, 
+              ab officia exercitationem velit quisquam sit placeat. Ipsum enim,
+              cum eos ducimus natus facere laboriosam aspernatur! Exercitationem, pariatur tempore.
             </p>
 
             <ul>
@@ -124,7 +120,7 @@ export function Home() {
           <h4>Publicações</h4>  
           <span>{posts.length} publicações</span>
         </div>
-        <form onSubmit={handleSubmit(handleSeachPost)}>
+        <form onSubmit={handleSubmit(handleSearchPost)}>
           <input 
             type="text" 
             placeholder="Buscar conteúdo"
